@@ -6,7 +6,7 @@ DreamHouse サンプルアプリケーションで使用する、Salesforce ベ�
 
 ### ステップ 1：DreamHouse アプリをインストールする
 
-DreamHouse サンプルアプリケーションをまだインストールしていない場合は、[この手順](http://dramhouseappjp.io/installation/)を実行してインストールします。
+DreamHouse サンプルアプリケーションをまだインストールしていない場合は、[この手順](http://dreamhouseappjp.io/installation/)を実行してインストールします。
 
 ### ステップ 2：接続アプリケーションを作成する
 
