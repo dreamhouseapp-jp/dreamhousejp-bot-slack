@@ -101,7 +101,7 @@ let createCase = newCase => {
         c.set('subject', newCase.subject);
         c.set('description', newCase.description);
         c.set('origin', 'Slack');
-        c.set('status', 'New');
+        c.set('status', '新規');
 
         org.insert({sobject: c}, err => {
             if (err) {

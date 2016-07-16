@@ -1,57 +1,49 @@
-# Slack Bot for the DreamHouse Sample App
+# DreamHouse サンプルアプリ用の Slack Bot
 
-A Salesforce-Powered Slack Bot for the DreamHouse Sample Application.
+DreamHouse サンプルアプリケーションで使用する、Salesforce ベースの Slack Botです。
 
-Follow the instructions below to create your own instance of the bot:
+ボットのインスタンスを作成するには、以下の手順を実行します。
 
-### Step 1: Install the DreamHouse App
+### ステップ 1：DreamHouse アプリをインストールする
 
-If you haven't already done so, follow [these instructions](http://dreamhouse-site.herokuapp.com/installation/) to install the DreamHouse sample application.
+DreamHouse サンプルアプリケーションをまだインストールしていない場合は、[この手順](http://dramhouseappjp.io/installation/)を実行してインストールします。
 
-### Step 2: Create a Connected App
+### ステップ 2：接続アプリケーションを作成する
 
-If you haven't already done so, follow the steps below to create a Salesforce connected app:
+Salesforce 接続アプリケーションをまだ作成していない場合は、以下の手順を実行して作成します。
 
-1. In Salesforce Setup, type **Apps** in the quick find box, and click the **Apps** link
+1. Salesforce の［設定］で、クイック検索ボックスに「**アプリ**」と入力して［**アプリケーション**］リンクをクリックします。
 
-1. In the **Connected Apps** section, click **New**, and define the Connected App as follows:
+1. ［**接続アプリケーション**］セクションで、［**新規**］をクリックし、次のように接続アプリケーションを定義します。
 
-    - Connected App Name: MyConnectedApp (or any name you want)
-    - API Name: MyConnectedApp
-    - Contact Email: enter your email address
-    - Enabled OAuth Settings: Checked
-    - Callback URL: http://localhost:8200/oauthcallback.html (You'll change this later)
-    - Selected OAuth Scopes: Full Access (full)
-    - Click **Save**
+    - 接続アプリケーション名：DreamhouseJpSlackBot（または任意の名前）
+    - API 参照名：DreamhouseJpSlackBot
+    - 取引先責任者メール：自分のメールアドレスを入力します。
+    - OAuth 設定の有効化：チェックボックスをオンにします。
+    - コールバック URL：http://localhost:8200/oauthcallback.html
+    - 選択した OAuth 範囲：フルアクセス（full）
+    - ［**保存**］をクリックします。
 
-## Step 3: Create the Bot User in Slack
+## ステップ 3：Slack でBotユーザーを作成する
 
-Follow [these instructions](https://api.slack.com/bot-users) to create a bot user in Slack.
+[この手順](https://api.slack.com/bot-users) に従って、Slack でボットユーザーを作成します。
 
-## Step 4: Install the Bot Implementation
+## ステップ 4：ボットをデプロイしインストールする
 
-1. Clone this repository
-    ```
-    git clone https://github.com/dreamhouseapp/dreamhouse-bot-slack
-    ```
+1. [Heroku ダッシュボード](https://dashboard.heroku.com/)にログインしていることを確認します。
 
-1. Install dependencies
-    ```
-    npm install
-    ```
+1. 下のボタンをクリックして、Messenger Bot を Heroku にデプロイします。
 
-1. On the command line, define the environment variables used in your Node.js app. On a Mac:
-    ```
-    export SLACK_BOT_TOKEN=your_slack_bot_token
-    export SF_CLIENT_ID=your_salesforce_connected_app_client_id
-    export SF_CLIENT_SECRET=your_salesforce_connected_app_secret
-    export SF_USER_NAME=salesforce_integration_user_name
-    export SF_PASSWORD=salesforce_integration_user_password
-    ```
-    
-1. Start the bot
-    ```
-    node server
-    ```
-    
-1. In Slack, select your bot under Direct Messages, type Help to see what you can ask, and start chatting with your bot!
+    [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
+1. 以下の通りに環境変数を設定します。
+
+    - ［**SLACK_BOT_TOKEN**］：先ほど作成したSlack Botユーザのトークンを入力します。
+    - ［**SF_CLIENT_ID**］：Salesforce 接続アプリケーションのコンシューマキーを入力します。
+    - ［**SF_CLIENT_SECRET**］：Salesforce 接続アプリケーションのコンシューマの秘密を入力します。
+    - ［**SF_USER_NAME**］：Salesforce 統合ユーザーのユーザー名を入力します。
+    - ［**SF_PASSWORD**］：Salesforce 統合ユーザーのパスワードを入力します。
+
+1. Salesforce統合用のユーザがログインできるように、IPアドレス制限の解除や接続アプリケーションの使用権限を付与しておきます。
+
+1. Slack の Direct Messages でボットを選択します。「Help」と入力すると、どのようなことができるかが表示されますので、ボットとのチャットを早速始めてみてください。

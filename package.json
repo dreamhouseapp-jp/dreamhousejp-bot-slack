@@ -1,12 +1,12 @@
 {
-  "name": "dreamhouse-bot-slack",
+  "name": "dreamhousejp-bot-slack",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
-  "author": "Christophe Coenraets <ccoenraets@gmail.com> (http://coenraets.org/)",
+  "author": "Salesforce Developers Japan<salesforcedevjp@salesforce.com>",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.14.2",

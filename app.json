@@ -1,0 +1,26 @@
+{
+  "name": "DreamHouseJP Bot for Slack",
+  "description": "Salesforceによる Slack Botアプリケーション : Dreamhouseサンプル",
+  "env": {
+    "SLACK_BOT_TOKEN": {
+      "description": "Slack Bot トークン",
+      "value":""
+    },
+    "SF_CLIENT_ID": {
+      "description": "Salesforce接続アプリケーションのコンシューマキー",
+      "value":""
+    },
+    "SF_CLIENT_SECRET": {
+      "description": "Salesforce接続アプリケーションのコンシューマシークレット",
+      "value":""
+    },
+    "SF_USER_NAME": {
+      "description": "インテグレーション用のSalesforceユーザ名",
+      "value":""
+    },
+    "SF_PASSWORD": {
+      "description": "インテグレーション用のSalesforceユーザのパスワード",
+      "value":""
+    }
+  }
+}

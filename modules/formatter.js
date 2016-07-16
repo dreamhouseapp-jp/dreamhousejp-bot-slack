@@ -10,17 +10,16 @@ exports.formatProperties = properties => {
         let attachments = [];
         properties.forEach(property => {
             let fields = [];
-            fields.push({title: "Address", value: `${property.get("Address__c")}, ${property.get("City__c")} ${property.get("State__c")}`, short:true});
-            fields.push({title: "Link", value: "https://login.salesforce.com/" + property.getId(), short:true});
-            fields.push({title: "Bedrooms", value: property.get("Beds__c"), short:true});
-            fields.push({title: "Price", value: `${numeral(property.get("Price__c")).format('$0,0')}`, short:true});
+            fields.push({title: "住所", value: `${property.get("State__c")} ${property.get("City__c")} ${property.get("Address__c")}`, short:true});
+            fields.push({title: "リンク", value: "https://login.salesforce.com/" + property.getId(), short:true});
+            fields.push({title: "部屋", value: property.get("Beds__c"), short:true});
+            fields.push({title: "価格", value: `${numeral(property.get("Price__c")).format('$0,0')}`, short:true});
             attachments.push({color: color, fields: fields});
         });
         return attachments;
     } else {
-        return [{text: "No records"}];
+        return [{text: "該当のレコードはありません"}];
     }
-
 };
 
 exports.formatPriceChanges = priceChanges => {
@@ -29,15 +28,15 @@ exports.formatPriceChanges = priceChanges => {
         priceChanges.forEach(priceChange => {
             let property = priceChange.get("Parent");
             let fields = [];
-            fields.push({title: "Address", value: `${property.Address__c}, ${property.City__c} ${property.State__c}`, short:true});
-            fields.push({title: "Link", value: "https://login.salesforce.com/" + property.Id, short:true});
-            fields.push({title: "Old Price", value: `${numeral(priceChange.get("OldValue")).format('$0,0')}`, short:true});
-            fields.push({title: "New Price", value: `${numeral(priceChange.get("NewValue")).format('$0,0')}`, short:true});
+            fields.push({title: "住所", value: `${property.State__c} ${property.City__c} ${property.Address__c} `, short:true});
+            fields.push({title: "リンク", value: "https://login.salesforce.com/" + property.Id, short:true});
+            fields.push({title: "旧価格", value: `${numeral(priceChange.get("OldValue")).format('￥0,0')}`, short:true});
+            fields.push({title: "新価格", value: `${numeral(priceChange.get("NewValue")).format('￥0,0')}`, short:true});
             attachments.push({color: color, fields: fields});
         });
         return attachments;
     } else {
-        return [{text: "No records"}];
+        return [{text: "該当のレコードはありません"}];
     }
 
 };
