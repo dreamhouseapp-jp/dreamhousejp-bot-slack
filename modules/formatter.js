@@ -13,7 +13,7 @@ exports.formatProperties = properties => {
             fields.push({title: "住所", value: `${property.get("State__c")} ${property.get("City__c")} ${property.get("Address__c")}`, short:true});
             fields.push({title: "リンク", value: "https://login.salesforce.com/" + property.getId(), short:true});
             fields.push({title: "部屋", value: property.get("Beds__c"), short:true});
-            fields.push({title: "価格", value: `${numeral(property.get("Price__c")).format('$0,0')}`, short:true});
+            fields.push({title: "価格", value: `${numeral(property.get("Price__c")).format('￥0,0')}`, short:true});
             attachments.push({color: color, fields: fields});
         });
         return attachments;
